@@ -12,8 +12,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        UIStepper.appearance().layer.cornerRadius = 10
     }
 
 
+    @IBAction func testbutton(_ sender: Any) {
+        print("hi")
+    }
 }
 

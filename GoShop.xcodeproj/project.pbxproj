@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250177832733F09800BF9CB2 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250177822733F09800BF9CB2 /* ProductViewController.swift */; };
 		2545D83027267F8E009FAADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D82F27267F8E009FAADF /* AppDelegate.swift */; };
 		2545D83227267F8F009FAADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D83127267F8F009FAADF /* SceneDelegate.swift */; };
 		2545D83427267F8F009FAADF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D83327267F8F009FAADF /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 		2545D84727267F90009FAADF /* GoShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D84627267F90009FAADF /* GoShopTests.swift */; };
 		2545D85127267F90009FAADF /* GoShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D85027267F90009FAADF /* GoShopUITests.swift */; };
 		2545D85327267F90009FAADF /* GoShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D85227267F90009FAADF /* GoShopUITestsLaunchTests.swift */; };
+		2545D86027269757009FAADF /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D85F27269757009FAADF /* BudgetViewController.swift */; };
+		2545D8622726ABDC009FAADF /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D8612726ABDC009FAADF /* ProductTableViewController.swift */; };
+		25DB868E273BA10900AFCFE1 /* NewUIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB868D273BA10900AFCFE1 /* NewUIStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		250177822733F09800BF9CB2 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		2545D82C27267F8E009FAADF /* GoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2545D82F27267F8E009FAADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2545D83127267F8F009FAADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		2545D84C27267F90009FAADF /* GoShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2545D85027267F90009FAADF /* GoShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoShopUITests.swift; sourceTree = "<group>"; };
 		2545D85227267F90009FAADF /* GoShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2545D85F27269757009FAADF /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		2545D8612726ABDC009FAADF /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		25DB868D273BA10900AFCFE1 /* NewUIStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUIStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +110,11 @@
 				2545D82F27267F8E009FAADF /* AppDelegate.swift */,
 				2545D83127267F8F009FAADF /* SceneDelegate.swift */,
 				2545D83327267F8F009FAADF /* ViewController.swift */,
+				250177822733F09800BF9CB2 /* ProductViewController.swift */,
 				2545D83527267F8F009FAADF /* Main.storyboard */,
+				25DB868D273BA10900AFCFE1 /* NewUIStepper.swift */,
+				2545D8612726ABDC009FAADF /* ProductTableViewController.swift */,
+				2545D85F27269757009FAADF /* BudgetViewController.swift */,
 				2545D83827267F90009FAADF /* Assets.xcassets */,
 				2545D83A27267F90009FAADF /* LaunchScreen.storyboard */,
 				2545D83D27267F90009FAADF /* Info.plist */,
@@ -258,9 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250177832733F09800BF9CB2 /* ProductViewController.swift in Sources */,
 				2545D83427267F8F009FAADF /* ViewController.swift in Sources */,
+				25DB868E273BA10900AFCFE1 /* NewUIStepper.swift in Sources */,
 				2545D83027267F8E009FAADF /* AppDelegate.swift in Sources */,
 				2545D83227267F8F009FAADF /* SceneDelegate.swift in Sources */,
+				2545D86027269757009FAADF /* BudgetViewController.swift in Sources */,
+				2545D8622726ABDC009FAADF /* ProductTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

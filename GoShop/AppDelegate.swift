@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        UIStepper.appearance().backgroundColor = .
+//        UIStepper.appearance().layer.cornerRadius = 10
+        NewUIStepper.appearance().backgroundColor = .red
+        NewUIStepper.appearance().layer.cornerRadius = 50
         return true
     }
 
