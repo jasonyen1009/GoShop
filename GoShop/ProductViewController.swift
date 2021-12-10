@@ -10,6 +10,7 @@ import UIKit
 class ProductViewController: UIViewController {
     
     
+    @IBOutlet var favoriteButton: [UIButton]!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet var fruitsvegetableTextField: [UITextField]!
     @IBOutlet var beverageTextField: [UITextField]!
@@ -17,6 +18,13 @@ class ProductViewController: UIViewController {
     @IBOutlet var fruitsvegetableStepper: [UIStepper]!
     @IBOutlet var beverageStepper: [UIStepper]!
     @IBOutlet var meatfishStepper: [UIStepper]!
+    
+    var buttonn:[String] = []
+//        didSet {
+//            let name = Notification.Name("Keytest")
+//            NotificationCenter.default.post(name: name, object: nil, userInfo: ["text": buttonn])
+//
+//        }
     
     var budget: Double!
     
@@ -69,6 +77,7 @@ class ProductViewController: UIViewController {
 //        budgetLabel.text = String(budget - value1 - value2)
 //        updateUI()
     }
+    
     //beverage-Stepper同步TextField
     @IBAction func beverageStepper(_ sender: UIStepper) {
         switch sender {
@@ -135,15 +144,52 @@ class ProductViewController: UIViewController {
         
         //預算小於０時觸發警示窗口，並且清除所有所選商品
         if Double(budgetLabel.text!)! < 0 {
-            let alertcontroller = UIAlertController(title: "💸💸💸", message: "Sorry you don't have enough budget", preferredStyle: .alert)
-            alertcontroller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alertcontroller = UIAlertController(title: "💸💸💸", message: "Sorry you don't have enough budget. Do you what to change your budget?", preferredStyle: .alert)
+
+            alertcontroller.addAction(UIAlertAction(title: "Yes", style: .default, handler:{ _ in
+                print("get yes")
+                
+                //新增第二視窗（輸入新的預算）
+                let alertcontroller1 = UIAlertController(title: "Change  budget", message: "", preferredStyle: .alert)
+                alertcontroller1.addTextField { textfield in
+                    textfield.placeholder = "budget"
+                    textfield.keyboardType = .numberPad
+                }
+                alertcontroller1.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alertcontroller1.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned alertcontroller1] _ in
+                    let value = alertcontroller1.textFields?[0].text
+                    self.budget = Double(value!) ?? self.budget
+                    self.budgetLabel.text = String(self.budget)
+                }))
+                self.present(alertcontroller1, animated: true, completion: nil)
+            }))
+            alertcontroller.addAction(UIAlertAction(title: "No", style: .default, handler: { _ in
+            }))
             present(alertcontroller, animated: true, completion: nil)
-            
             clear(UIButton.self)
+            
         }
-        
-        
     }
+    
+    //更改預算視窗
+    @IBAction func changebudget(_ sender: Any) {
+        let alertcontroller = UIAlertController(title: "Change budget", message: "", preferredStyle: .alert)
+        alertcontroller.addTextField { textfield in
+            textfield.placeholder = "budget"
+            textfield.keyboardType = .numberPad
+        }
+        alertcontroller.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned alertcontroller] _ in
+            let value = alertcontroller.textFields?[0].text
+            //如果沒有值，回傳原本budget
+            self.budget = Double(value!) ?? self.budget
+            self.budgetLabel.text = String(self.budget)
+        }))
+        alertcontroller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertcontroller, animated: true, completion: nil)
+    }
+    
+    
+    
     //清除所有所選的商品
     @IBAction func clear(_ sender: Any) {
         for i in 0...3 {
@@ -157,7 +203,52 @@ class ProductViewController: UIViewController {
         budgetLabel.text = String(format: "%.2f", budget)
     }
 
-
+    //傳資料測試
+    @IBAction func buttontest(_ sender: UIButton) {
+        switch sender {
+        case favoriteButton[0]:
+            sender.isSelected.toggle()
+//            if sender.isSelected == true {
+//                buttonn.append("button1")
+//            }else {
+//                buttonn.removeAll {$0 == "button1"}
+//            }
+        case favoriteButton[1]:
+            sender.isSelected.toggle()
+//            if sender.isSelected == true {
+//                buttonn.append("button2")
+//            }else {
+//                buttonn.removeAll {$0 == "button2"}
+//            }
+        case favoriteButton[2]:
+            sender.isSelected.toggle()
+        case favoriteButton[3]:
+            sender.isSelected.toggle()
+        case favoriteButton[4]:
+            sender.isSelected.toggle()
+        case favoriteButton[5]:
+            sender.isSelected.toggle()
+        case favoriteButton[6]:
+            sender.isSelected.toggle()
+        case favoriteButton[7]:
+            sender.isSelected.toggle()
+        case favoriteButton[8]:
+            sender.isSelected.toggle()
+        case favoriteButton[9]:
+            sender.isSelected.toggle()
+        case favoriteButton[10]:
+            sender.isSelected.toggle()
+        case favoriteButton[11]:
+            sender.isSelected.toggle()
+        
+        default:
+            break
+        }
+        print(buttonn)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

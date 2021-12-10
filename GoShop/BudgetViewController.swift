@@ -9,11 +9,13 @@ import UIKit
 
 class BudgetViewController: UIViewController {
     
+    @IBOutlet var ViewT: UIView!
     @IBOutlet weak var EnterLabel: UILabel!
     @IBOutlet weak var BudgetTextField: UITextField!
     @IBOutlet weak var NextpageButton: UIButton!
     @IBOutlet weak var WarningSign: UILabel!
     @IBOutlet weak var LabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nextpagetopconstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -37,10 +39,22 @@ class BudgetViewController: UIViewController {
     }
     
 
+
+    
+    
+//    @IBSegueAction func nextpage(_ coder: NSCoder) -> ProductViewController? {
+//        let controller = ProductViewController(coder: coder, budget: Double(BudgetTextField.text!) ?? 0)
+//        return controller
+//    }
+    
     @IBSegueAction func nextpage(_ coder: NSCoder) -> ProductViewController? {
         let controller = ProductViewController(coder: coder, budget: Double(BudgetTextField.text!) ?? 0)
         return controller
     }
+    
+    
+    
+    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if BudgetTextField.text?.isEmpty == false,
@@ -68,8 +82,23 @@ class BudgetViewController: UIViewController {
     
     //收鍵盤
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 1, delay: 0) {
+            self.nextpagetopconstraint.constant = 497
+        self.view.layoutIfNeeded()
+    }
         self.view.endEditing(true)
     }
+    
+
+    //點擊鍵盤時觸發
+    @IBAction func changebuttontopconstraint(_ sender: Any) {
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.8, delay: 0) {
+                self.nextpagetopconstraint.constant = self.ViewT.frame.height / 2
+                self.view.layoutIfNeeded()
+            }
+    }
+    
+    
     
     /*
     // MARK: - Navigation

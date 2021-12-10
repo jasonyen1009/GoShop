@@ -19,6 +19,7 @@
 		2545D85327267F90009FAADF /* GoShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D85227267F90009FAADF /* GoShopUITestsLaunchTests.swift */; };
 		2545D86027269757009FAADF /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D85F27269757009FAADF /* BudgetViewController.swift */; };
 		2545D8622726ABDC009FAADF /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2545D8612726ABDC009FAADF /* ProductTableViewController.swift */; };
+		25D2FB38275E126100A2BDEF /* favoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2FB37275E126100A2BDEF /* favoriteTableViewController.swift */; };
 		25DB868E273BA10900AFCFE1 /* NewUIStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB868D273BA10900AFCFE1 /* NewUIStepper.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		2545D85227267F90009FAADF /* GoShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2545D85F27269757009FAADF /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		2545D8612726ABDC009FAADF /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		25D2FB37275E126100A2BDEF /* favoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteTableViewController.swift; sourceTree = "<group>"; };
 		25DB868D273BA10900AFCFE1 /* NewUIStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUIStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 		2545D82327267F8E009FAADF = {
 			isa = PBXGroup;
 			children = (
+				25D2FB37275E126100A2BDEF /* favoriteTableViewController.swift */,
 				2545D82E27267F8E009FAADF /* GoShop */,
 				2545D84527267F90009FAADF /* GoShopTests */,
 				2545D84F27267F90009FAADF /* GoShopUITests */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250177832733F09800BF9CB2 /* ProductViewController.swift in Sources */,
+				25D2FB38275E126100A2BDEF /* favoriteTableViewController.swift in Sources */,
 				2545D83427267F8F009FAADF /* ViewController.swift in Sources */,
 				25DB868E273BA10900AFCFE1 /* NewUIStepper.swift in Sources */,
 				2545D83027267F8E009FAADF /* AppDelegate.swift in Sources */,
