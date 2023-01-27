@@ -19,12 +19,16 @@ class ProductViewController: UIViewController {
     @IBOutlet var beverageStepper: [UIStepper]!
     @IBOutlet var meatfishStepper: [UIStepper]!
     
-    var buttonn:[String] = []
-//        didSet {
-//            let name = Notification.Name("Keytest")
-//            NotificationCenter.default.post(name: name, object: nil, userInfo: ["text": buttonn])
-//
-//        }
+    let userDefault = UserDefaults.standard
+    
+    var AllButtonState:[Bool] = [] {
+        didSet {
+            userDefault.set(AllButtonState, forKey: "favorite")
+            // 發布通知
+            NotificationCenter.default.post(name: AllNotification.favoritupdate, object: nil)
+        }
+    }
+
     
     var budget: Double!
     
@@ -46,6 +50,12 @@ class ProductViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
+        
+        // 將 favoriteButton 的狀態都加到 AllButtonState 中
+        for i in favoriteButton {
+            AllButtonState.append(i.isSelected)
+        }
+        
     }
     
     //收鍵盤
@@ -205,46 +215,48 @@ class ProductViewController: UIViewController {
 
     //傳資料測試
     @IBAction func buttontest(_ sender: UIButton) {
-        switch sender {
-        case favoriteButton[0]:
-            sender.isSelected.toggle()
-//            if sender.isSelected == true {
-//                buttonn.append("button1")
-//            }else {
-//                buttonn.removeAll {$0 == "button1"}
-//            }
-        case favoriteButton[1]:
-            sender.isSelected.toggle()
-//            if sender.isSelected == true {
-//                buttonn.append("button2")
-//            }else {
-//                buttonn.removeAll {$0 == "button2"}
-//            }
-        case favoriteButton[2]:
-            sender.isSelected.toggle()
-        case favoriteButton[3]:
-            sender.isSelected.toggle()
-        case favoriteButton[4]:
-            sender.isSelected.toggle()
-        case favoriteButton[5]:
-            sender.isSelected.toggle()
-        case favoriteButton[6]:
-            sender.isSelected.toggle()
-        case favoriteButton[7]:
-            sender.isSelected.toggle()
-        case favoriteButton[8]:
-            sender.isSelected.toggle()
-        case favoriteButton[9]:
-            sender.isSelected.toggle()
-        case favoriteButton[10]:
-            sender.isSelected.toggle()
-        case favoriteButton[11]:
-            sender.isSelected.toggle()
         
-        default:
-            break
+        sender.isSelected.toggle()
+        
+        // 簡化以下的 Code
+        for i in 0...favoriteButton.count - 1 {
+            if sender == favoriteButton[i] {
+                AllButtonState[i] = sender.isSelected
+            }
         }
-        print(buttonn)
+        
+//        switch sender {
+//        case favoriteButton[0]:
+//            sender.isSelected.toggle()
+//            AllButtonState[0] = sender.isSelected
+//
+//        case favoriteButton[1]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[2]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[3]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[4]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[5]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[6]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[7]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[8]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[9]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[10]:
+//            sender.isSelected.toggle()
+//        case favoriteButton[11]:
+//            sender.isSelected.toggle()
+//
+//        default:
+//            break
+//        }
+        
     }
     
     
